@@ -58,6 +58,11 @@ class AddressBookTest {
                 .toArray(String[]::new);
         // Sorted array
         System.out.println("Sorted : " + Arrays.toString(strArray));
+
+        String[] name = {"Rakesh", "Sampriti", "Abhishek"}.toCharArray();
+        String[] city = {"Kolkata", "Howrah"}.toCharArray();
+        obj.SortByPattern(name, city);
+        System.out.println(String.valueOf(name));
     }
 
     @Test
