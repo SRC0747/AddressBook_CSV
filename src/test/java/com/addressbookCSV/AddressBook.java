@@ -13,6 +13,9 @@ import java.io.FileWriter; // writes from dat file
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import java.io.FileWriter;
+import com.opencsv.CSVWriter;
+
 public interface Inter
 {
     //Interface class
@@ -105,6 +108,24 @@ public class AddressBook extends Contact implements Inter{
         String[] city = {"Kolkata", "Howrah"}.toCharArray();
         SortByPattern(name, city);
         System.out.println(String.valueOf(name));
+
+        //Write the CSV IO File.
+        //Instantiating the CSVWriter class
+        CSVWriter writer = new CSVWriter(new FileWriter("D://output.csv"));
+        //Writing data to a csv file
+        String line1[] = {"id", "name", "state", "city", "contact_no","email_id"};
+        String line2[] = {"1", "Krishna", "Maharashtra", "Pune", "7044585965","srk1352@gmail.com"};
+        String line3[] = {"2", "Vishnu", "West Bengal", "Kolkata", "9674523985","vishnu325@gmail.com"};
+        String line4[] = {"3", "Raja", "Andhrapradesh", "Hyderabad", "9674218963","src32585@gmail.com"};
+        String line5[] = {"4", "Sampriti", "West Bengal", "Kolkata", "7044585936","sampritisrk1998@gmail.com"};
+        //Writing data to the csv file
+        writer.writeNext(line1);
+        writer.writeNext(line2);
+        writer.writeNext(line3);
+        writer.writeNext(line4);
+        //Flushing data from writer to file
+        writer.flush();
+        System.out.println("Data entered");
     }
     public static void personDetail()
     {
@@ -150,6 +171,7 @@ public class AddressBook extends Contact implements Inter{
         String email=c.readLine();
         System.out.println("Your email is: "+email);
     }
+    public static void editContactDetail()
     {
         Scanner sc=new Scanner(System.in);
         Console c=System.console();
