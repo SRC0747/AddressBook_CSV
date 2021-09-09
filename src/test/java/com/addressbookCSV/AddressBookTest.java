@@ -8,6 +8,7 @@ import java.util.Scanner;
 import java.io.Console;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 class AddressBookTest {
     public static void main(String[] main(){
@@ -46,6 +47,17 @@ class AddressBookTest {
         long count = Stream.of("WestBengal","Mumbai")
                 .collect(Collectors.counting());
         System.out.printf("There are %d persons in the stream %n", count);
+
+
+        //Sort the Persons name in alphabetic order using console.
+        // Unsorted string array
+        String[] strArray = { "Rakesh","Abhishek","Sampriti" };
+        // Sorting the strings
+        strArray = Stream.of(strArray)
+                .sorted()
+                .toArray(String[]::new);
+        // Sorted array
+        System.out.println("Sorted : " + Arrays.toString(strArray));
     }
 
     @Test
