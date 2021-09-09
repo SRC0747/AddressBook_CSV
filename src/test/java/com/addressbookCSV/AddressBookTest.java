@@ -35,4 +35,9 @@ class AddressBookTest {
     public void toDisplay_AddressBook() {
         obj.multiDetailAddressBook();
     }
+
+    @Test
+    public void toOverride_Detail() {
+        System.out.println(equals(AddressBookTest obj));
+    }
 }

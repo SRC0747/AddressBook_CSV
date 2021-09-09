@@ -12,6 +12,7 @@ public class AddressBook {
         clearConsole();
         multiplePersonDetail();
         multiDetailAddressBook();
+        System.out.println(equals(AddressBook obj));
     }
     public static void personDetail()
     {
@@ -141,5 +142,19 @@ public class AddressBook {
 
 
         System.out.println("\nSize of my_dict : " + my_dict.size());
+    }
+
+    @Override
+    public boolean equals(AddressBook obj) {
+        boolean result;
+        String name,address,city,state,phno,email;
+        if((obj == null) || (getClass() != obj.getClass())){
+            result = false;
+        } // end if
+        else{
+            AddressBook otherdetail = (AddressBook) obj;
+            result = name.equals(obj.name) &&  address.equals(obj.address) && city.equals(obj.city) &&  state.equals(obj.state) && phno.equals(obj.phno) && email.equals(obj.email);
+        } // end else
+        return super.equals(obj);
     }
 }
