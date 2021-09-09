@@ -8,6 +8,7 @@ public class AddressBook {
         System.out.println("Welcome to Address Book CSV System");
         personDetail();
         contactNewPerson();
+        editContactDetail();
     }
     public static void personDetail()
     {
@@ -73,5 +74,10 @@ public class AddressBook {
         System.out.println("Enter your email:");
         String email=c.readLine();
         System.out.println("Your email is: "+email);
+    }
+    public static void editContactDetail()
+    {
+        System.out.println("After Editing the Existed Contact The list of details are given below:");
+        contactNewPerson();
     }
 }
