@@ -25,4 +25,14 @@ class AddressBookTest {
     public void toDelete_ContactPerson() {
         obj.clearconsole();
     }
+
+    @Test
+    public void toDisplay_MultiplePersonContact() {
+        obj. multiplePersonDetail();
+    }
+
+    @Test
+    public void toDisplay_AddressBook() {
+        obj.multiDetailAddressBook();
+    }
 }
